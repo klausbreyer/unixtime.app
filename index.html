@@ -1,0 +1,57 @@
+<html>
+
+<head>
+
+    <script>
+
+
+    </script>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+
+        textarea {
+            margin: 0;
+            padding: 0;
+            flex: 1;
+            background-color: #ccc;
+            width: 50vw;
+            height: 100vh;
+        }
+    </style>
+</head>
+
+<body>
+    <textarea id="input">asdf</textarea>
+
+    <textarea id="output">asdf</textarea>
+
+</body>
+<script>
+    const numberPattern = /\d+/g;
+    const input = document.getElementById('input');
+    const output = document.getElementById('output');
+    if (input.addEventListener) {
+        input.addEventListener('input', function () {
+            const numbers = input.value.match(numberPattern).filter(n => n > Math.floor(new Date('2022').getTime()))
+
+            console.log(numbers);
+
+            let text = input.value;
+
+            numbers.forEach(n => {
+                text = text.replace(n, new Date(n * 1).toLocaleDateString("en") + " " + new Date(n * 1).toLocaleTimeString("en"))
+            })
+
+            output.value = text
+
+
+        }, false);
+    }
+
+</script>
+
+</html>

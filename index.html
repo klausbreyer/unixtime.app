@@ -1,15 +1,14 @@
 <html>
 
 <head>
-
-    <script>
-
-
-    </script>
     <style>
         body {
             margin: 0;
             padding: 0;
+            font-family: Arial, Helvetica, sans-serif
+        }
+
+        main {
             display: flex;
         }
 
@@ -17,18 +16,31 @@
             margin: 0;
             padding: 0;
             flex: 1;
-            background-color: #ccc;
+            background-color: #eee;
             width: 50vw;
-            height: 100vh;
+            height: 97vh;
+        }
+
+        footer {
+            height: 2vh;
+            width: 100vw;
+            text-align: center;
+            padding-top: 1vh;
         }
     </style>
 </head>
 
 <body>
-    <textarea id="input">asdf</textarea>
-
-    <textarea id="output">asdf</textarea>
-
+    <main>
+        <textarea
+            id="input">write or paste text with timestamps here!</textarea>
+        <textarea id="output" disabled>output will be converted here.</textarea>
+    </main>
+    <footer>
+        <a href="https://www.unixtime.app/">timestamp.app</a> - &copy; <a
+            href="https://v01.io">Klaus Breyer</a>, <a
+            href="https://github.com/klausbreyer/unixtime.app">Open Source</a>.
+    </footer>
 </body>
 <script>
     const numberPattern = /\d+/g;
@@ -36,18 +48,19 @@
     const output = document.getElementById('output');
     if (input.addEventListener) {
         input.addEventListener('input', function () {
-            const numbers = input.value.match(numberPattern).filter(n => n > Math.floor(new Date('2022').getTime()))
+            const numbers = input.value.match(numberPattern);
+            if (!numbers) {
+                output.value = input.value;
+                return;
+            }
 
-            console.log(numbers);
+            const filtered = nunbers.filter(n => n > Math.floor(new Date('2022').getTime()))
 
             let text = input.value;
-
-            numbers.forEach(n => {
+            filtered.forEach(n => {
                 text = text.replace(n, new Date(n * 1).toLocaleDateString("en") + " " + new Date(n * 1).toLocaleTimeString("en"))
             })
-
             output.value = text
-
 
         }, false);
     }

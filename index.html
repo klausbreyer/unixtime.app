@@ -12,13 +12,21 @@
             display: flex;
         }
 
+        pre,
+
         textarea {
+            font-family: Menlo, Consolas, Monaco, Liberation Mono, Lucida Console, monospace;
             margin: 0;
             padding: 0;
             flex: 1;
             background-color: #eee;
             width: 50vw;
             height: 97vh;
+            overflow: scroll;
+            border: 1px solid black;
+            /* line-height: 1.1em; */
+            white-space: pre;
+            font-size: 0.9rem;
         }
 
         footer {
@@ -34,7 +42,7 @@
     <main>
         <textarea
             id="input">write or paste text with timestamps here!</textarea>
-        <textarea id="output" disabled>output will be converted here.</textarea>
+        <pre id="output" disabled>output will be converted here.</pre>
     </main>
     <footer>
         <a href="https://www.unixtime.app/">timestamp.app</a> - &copy; <a
@@ -43,6 +51,10 @@
     </footer>
 </body>
 <script>
+
+    function dateTimeString(n) {
+        return new Date(n * 1).toLocaleDateString("en") + " " + new Date(n * 1).toLocaleTimeString("en")
+    }
     const numberPattern = /\d+/g;
     const input = document.getElementById('input');
     const output = document.getElementById('output');
@@ -58,9 +70,9 @@
 
             let text = input.value;
             filtered.forEach(n => {
-                text = text.replace(n, new Date(n * 1).toLocaleDateString("en") + " " + new Date(n * 1).toLocaleTimeString("en"))
+                text = text.replace(n, `<b>${dateTimeString(n)}</b>`)
             })
-            output.value = text
+            output.innerHTML = text
 
         }, false);
     }

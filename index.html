@@ -23,14 +23,20 @@
             margin: 0;
             padding: 0;
             flex: 1;
+            color: #D4D5D4;
             background-color: #1D1E1F;
             width: 50vw;
             height: 100vh;
             overflow: scroll;
-            color: #D4D5D4;
             border-width: 0;
             white-space: pre-wrap;
             font-size: 0.9rem;
+        }
+
+        .inverse {
+            color: #1D1E1F;
+            background-color: #D4D5D4;
+            font-weight: bold;
         }
 
         textarea {
@@ -115,7 +121,7 @@
 
             let text = input.value;
             filtered.forEach(n => {
-                text = text.replace(n, `<b>${dateTimeString(n)}</b>`)
+                text = text.replace(n, `<span class="inverse">${dateTimeString(n)}</span>`)
             })
             output.innerHTML = text
 

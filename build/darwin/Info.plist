@@ -1,14 +1,16 @@
+
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0"><dict>
-	<key>CFBundlePackageType</key><string>APPL</string>
+    <key>CFBundlePackageType</key><string>APPL</string>
 	<key>CFBundleName</key><string>{{.Info.ProductName}}</string>
 	<key>CFBundleExecutable</key><string>{{.Name}}</string>
-	<key>CFBundleIdentifier</key><string>com.wails.{{.Name}}</string>
-	<key>CFBundleVersion</key><string>{{.Info.ProductVersion}}</string>
+    <key>CFBundleIdentifier</key><string>app.unixtime</string>
+    <key>CFBundleVersion</key><string>0.1.0</string>
 	<key>CFBundleGetInfoString</key><string>{{.Info.Comments}}</string>
-	<key>CFBundleShortVersionString</key><string>{{.Info.ProductVersion}}</string>
-	<key>CFBundleIconFile</key><string>iconfile</string>
-	<key>LSMinimumSystemVersion</key><string>10.13.0</string>
-	<key>NSHighResolutionCapable</key><string>true</string>
+    <key>CFBundleShortVersionString</key><string>0.1.0</string>
+    <key>CFBundleIconFile</key><string>iconfile</string>
+    <key>LSMinimumSystemVersion</key><string>10.13.0</string>
+    <key>NSHighResolutionCapable</key><string>true</string>
+    <key>LSApplicationCategoryType</key><string>public.app-category.utilities</string>
 	<key>NSHumanReadableCopyright</key><string>{{.Info.Copyright}}</string>
 </dict></plist>

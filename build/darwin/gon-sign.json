@@ -1,0 +1,13 @@
+{
+    "source": [
+        "./build/bin/unixtime.app"
+    ],
+    "bundle_id": "app.unixtime",
+    "apple_id": {
+        "username": "kb@v01.io",
+        "password": "@env:APPLE_PASSWORD"
+    },
+    "sign": {
+        "application_identity": "Developer ID Application: klaus breyer (F9C2G96HYP)"
+    }
+}

@@ -4,3 +4,6 @@ build/bin
 node_modules
 *.log
 frontend/dist
+.env
+build/tools
+build/arm64

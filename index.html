@@ -43,13 +43,33 @@
             border-right: 1px solid #D4D5D4;
         }
 
-        footer {
+        footer,
+        header {
             color: #1D1E1F;
             background-color: #bfdcea;
             position: fixed;
             bottom: 0;
-            right: 0;
+            left: 0;
             padding: 0.25em;
+            font-weight: normal;
+        }
+
+        footer {
+            right: 0;
+            left: auto;
+        }
+
+        footer p {
+            margin: 0;
+        }
+
+        footer p:first-child {
+            margin-top: 0;
+            margin-bottom: 0.25em;
+        }
+
+        a {
+            color: #1D1E1F;
         }
     </style>
 
@@ -62,16 +82,135 @@
         <pre id="output"
             disabled>Paste some text with timestamps on the left and output will be converted here.</pre>
     </main>
-    <footer>&copy; <a href="https://v01.io/" class="inverse"
-            target="_blank">Klaus
-            Breyer</a></footer>
+    <header>
 
+    </header>
+
+    <footer>
+        <p>
+            unixtime.app &copy; <a href="https://v01.io/" target="_blank">Klaus
+                Breyer</a>
+        </p>
+        <p>
+            Convert:
+            <select id="unit">
+                <option>seconds</option>
+                <option>millis</option>
+            </select>
+            since
+            <select id="epoch">
+                <option>2050</option>
+                <option>2049</option>
+                <option>2048</option>
+                <option>2047</option>
+                <option>2046</option>
+                <option>2045</option>
+                <option>2044</option>
+                <option>2043</option>
+                <option>2042</option>
+                <option>2041</option>
+                <option>2040</option>
+                <option>2039</option>
+                <option>2038</option>
+                <option>2037</option>
+                <option>2036</option>
+                <option>2035</option>
+                <option>2034</option>
+                <option>2033</option>
+                <option>2032</option>
+                <option>2031</option>
+                <option>2030</option>
+                <option>2029</option>
+                <option>2028</option>
+                <option>2027</option>
+                <option>2026</option>
+                <option>2025</option>
+                <option>2024</option>
+                <option>2023</option>
+                <option>2022</option>
+                <option>2021</option>
+                <option>2020</option>
+                <option>2019</option>
+                <option>2018</option>
+                <option>2017</option>
+                <option>2016</option>
+                <option>2015</option>
+                <option>2014</option>
+                <option>2013</option>
+                <option>2012</option>
+                <option>2011</option>
+                <option>2010</option>
+                <option>2009</option>
+                <option>2008</option>
+                <option>2007</option>
+                <option>2006</option>
+                <option>2005</option>
+                <option>2004</option>
+                <option>2003</option>
+                <option>2002</option>
+                <option>2001</option>
+                <option>2000</option>
+                <option>1999</option>
+                <option>1998</option>
+                <option>1997</option>
+                <option>1996</option>
+                <option>1995</option>
+                <option>1994</option>
+                <option>1993</option>
+                <option>1992</option>
+                <option>1991</option>
+                <option>1990</option>
+                <option>1989</option>
+                <option>1988</option>
+                <option>1987</option>
+                <option>1986</option>
+                <option>1985</option>
+                <option>1984</option>
+                <option>1983</option>
+                <option>1982</option>
+                <option>1981</option>
+                <option>1980</option>
+                <option>1979</option>
+                <option>1978</option>
+                <option>1977</option>
+                <option>1976</option>
+                <option>1975</option>
+                <option>1974</option>
+                <option>1973</option>
+                <option>1972</option>
+                <option>1971</option>
+                <option>Epoch</option>
+            </select>
+        </p>
+    </footer>
 </body>
-<script>
 
-    function dateTimeString(n) {
-        return new Date(n * 1).toLocaleDateString("en") + " " + new Date(n * 1).toLocaleTimeString("en")
-    }
+<script>
+    const epochElement = document.getElementById("epoch");
+    const unitElement = document.getElementById("unit");
+
+    epochElement.addEventListener("change", function () {
+        localStorage.setItem("epoch", epochElement.value)
+    });
+
+    unitElement.addEventListener("change", function () {
+        localStorage.setItem("unit", unitElement.value)
+    });
+
+
+    window.onload = function () {
+        if (!localStorage.getItem("epoch")) {
+            localStorage.setItem("epoch", new Date().getFullYear());
+        }
+
+        if (!localStorage.getItem("unit")) {
+            localStorage.setItem("unit", "millis");
+        }
+
+        epochElement.value = localStorage.getItem("epoch")
+        unitElement.value = localStorage.getItem("unit");
+    };
+
     const numberPattern = /\d+/g;
     const input = document.getElementById('input');
     const output = document.getElementById('output');
@@ -92,6 +231,10 @@
             output.innerHTML = text
 
         }, false);
+    }
+
+    function dateTimeString(n) {
+        return new Date(n * 1).toLocaleDateString("en") + " " + new Date(n * 1).toLocaleTimeString("en")
     }
 
 </script>

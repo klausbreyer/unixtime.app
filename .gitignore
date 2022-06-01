@@ -1,0 +1,6 @@
+.DS_Store
+build/bin
+.vscode
+node_modules
+*.log
+frontend/dist

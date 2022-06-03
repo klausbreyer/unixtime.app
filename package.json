@@ -1,0 +1,14 @@
+{
+  "name": "unixtimeapp",
+  "version": "0.1.0",
+  "main": "main.js",
+  "repository": "git@github.com:klausbreyer/unixtime.app.git",
+  "author": "Klaus Breyer <kb@v01.io>",
+  "license": "UNLICENSED",
+  "devDependencies": {
+    "electron": "^19.0.3"
+  },
+  "scripts": {
+    "start": "electron ."
+  }
+}

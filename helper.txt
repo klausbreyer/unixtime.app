@@ -1,0 +1,4 @@
+ yarn run electron-packager . "unixtime" --platform=mas --arch=arm64,x64 --app-bundle-id="app.unixtime" --app-version="0.1.0" --build-version="0.1.100"   --osx-sign.identity="F9C2G96HYP" --overwrite
+
+  yarn run electron-osx-flat unixtime-mas-arm64/unixtime.app --identity="3rd Party Mac Developer Installer: klaus breyer (F9C2G96HYP)"
+

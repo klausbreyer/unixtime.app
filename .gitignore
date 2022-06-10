@@ -7,4 +7,5 @@ frontend/dist
 .env
 build/tools
 build/arm64
-unixtime-mas-arm64
+embedded.provisionprofile
+dist

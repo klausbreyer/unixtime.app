@@ -3,6 +3,7 @@ start:
 
 magic:
 	rm -rf dist
+	# yarn version --patch
 	yarn dist
 	make upload
 

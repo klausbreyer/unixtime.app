@@ -1,14 +1,8 @@
-local:
-	rm -rf dist
-	rm -rf out
-	yarn package
-
 start:
 	yarn start
 
 magic:
 	rm -rf dist
-	rm -rf out
 	# yarn version --patch
 	yarn dist
 	make upload

@@ -7,6 +7,11 @@ frontend/dist
 .env
 build/tools
 build/arm64
+
+out/
+wyomingunixtime.provisionprofile
+package.json.back
 embedded.provisionprofile
 dist
 out
+unixtime-mas-arm64

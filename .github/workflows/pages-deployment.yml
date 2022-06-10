@@ -17,6 +17,6 @@ jobs:
         with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
-          projectName: unixtimeapp # e.g. 'my-project'
+          projectName: unixtime-app # e.g. 'my-project'
           directory: src # e.g. 'dist'
           gitHubToken: ${{ secrets.GITHUB_TOKEN }}

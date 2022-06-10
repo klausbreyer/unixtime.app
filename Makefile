@@ -1,5 +1,10 @@
-universal:
-	yarn electron-forge package --arch x64
-	yarn electron-forge package --arch arm64
-	node universal.js
-	sh sign.sh
+start:
+	yarn start
+
+magic:
+	yarn dist
+	make upload
+
+upload:
+	xcrun altool --validate-app -f dist/mas-universal/unixtime-0.1.0-universal.pkg -u ${APPLE_ID} -p ${APPLE_PASSWORD} --type macos
+	xcrun altool --upload-app -f dist/mas-universal/unixtime-0.1.0-universal.pkg -u ${APPLE_ID} -p ${APPLE_PASSWORD} --type macos

@@ -7,3 +7,5 @@ frontend/dist
 .env
 build/tools
 build/arm64
+embedded.provisionprofile
+dist

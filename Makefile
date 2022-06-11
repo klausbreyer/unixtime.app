@@ -9,7 +9,7 @@ start:
 magic:
 	rm -rf dist
 	rm -rf out
-	# yarn version --patch
+	yarn version --patch
 	yarn dist
 	make upload
 

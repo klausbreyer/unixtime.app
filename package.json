@@ -1,6 +1,6 @@
 {
   "name": "unixtime",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "main": "main.js",
   "repository": "git@github.com:klausbreyer/unixtime.app.git",
   "author": "Klaus Breyer <kb@v01.io>",

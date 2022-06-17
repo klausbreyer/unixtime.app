@@ -58,9 +58,13 @@ function parse() {
   }
   const filtered = numbers.filter((n) => n > minimum);
 
-  let text = input.value;
+  output.innerHTML = input.value;
+  hljs.highlightAll();
+
+  let text = output.innerHTML;
   filtered.forEach((n) => {
     text = text.replace(n, `<span class="inverse">${dateTimeString(n)}</span>`);
+    // text = text.replace(n, `${dateTimeString(n)}`);
   });
   output.innerHTML = text;
 }

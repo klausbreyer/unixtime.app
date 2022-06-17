@@ -10,6 +10,7 @@
         content="unixtime.app is an Web App to replace unix timestamps in large chunks of text data." />
 
     <link rel="stylesheet" href="index.css" />
+    <link rel="stylesheet" href="./lib/highlight.js-11.5.1/github-dark.min.css">
 </head>
 
 <body>
@@ -17,8 +18,8 @@
     <main>
         <textarea
             id="input">write or paste text with timestamps here!</textarea>
-        <pre id="output"
-            disabled>Paste some text with timestamps on the left and output will be converted here.</pre>
+        <pre
+            disabled><code id="output"  class="language-json">Paste some text with timestamps on the left and output will be converted here.</code></pre>
     </main>
 
     <footer>
@@ -131,6 +132,9 @@
     </footer>
 
     <script src="index.js"></script>
+
+    <script src="./lib/highlight.js-11.5.1/highlight.min.js"></script>
+    <script>hljs.highlightAll();</script>
 </body>
 
 

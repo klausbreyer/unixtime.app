@@ -11,9 +11,14 @@ main {
 }
 
 pre,
+code,
 textarea {
   font-family: Menlo, Consolas, Monaco, Liberation Mono, Lucida Console,
     monospace;
+}
+
+pre,
+textarea {
   margin: 0;
   padding: 0;
   flex: 1;

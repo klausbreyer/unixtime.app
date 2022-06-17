@@ -1,14 +1,28 @@
+const input = document.getElementById("input");
+const output = document.getElementById("output");
+
 const epochElement = document.getElementById("epoch");
 const unitElement = document.getElementById("unit");
+
+let dirty = false;
 
 epochElement.addEventListener("change", function () {
   localStorage.setItem("epoch", epochElement.value);
   parse();
+  console.log(dirty);
+  if (!dirty) {
+    welcome();
+  }
 });
 
 unitElement.addEventListener("change", function () {
   localStorage.setItem("unit", unitElement.value);
   parse();
+  console.log(dirty);
+
+  if (!dirty) {
+    welcome();
+  }
 });
 
 window.addEventListener("DOMContentLoaded", function () {
@@ -22,6 +36,8 @@ window.addEventListener("DOMContentLoaded", function () {
 
   epochElement.value = localStorage.getItem("epoch");
   unitElement.value = localStorage.getItem("unit");
+
+  welcome();
 });
 
 window.addEventListener("DOMContentLoaded", function () {
@@ -30,17 +46,21 @@ window.addEventListener("DOMContentLoaded", function () {
   }
 });
 
-const input = document.getElementById("input");
-const output = document.getElementById("output");
-if (input.addEventListener) {
-  input.addEventListener("input", parse, false);
-}
+input.addEventListener(
+  "input",
+  () => {
+    dirty = true;
+    parse();
+  },
+  false
+);
 
 function parse() {
   const numberPattern = /\d+/g;
   const numbers = input.value.match(numberPattern);
   if (!numbers) {
-    output.value = input.value;
+    output.innerHTML = input.value;
+    hljs.highlightAll();
     return;
   }
 
@@ -48,7 +68,7 @@ function parse() {
   if (localStorage.getItem("unit") === "seconds") {
     minimum = Math.floor(minimum / 1000);
   }
-  const toReplace = numbers.filter((n) => n > minimum);
+  const toReplace = numbers.filter((n) => n >= minimum);
 
   output.innerHTML = input.value;
   hljs.highlightAll();
@@ -80,6 +100,18 @@ function dateTimeString(n) {
     " " +
     new Date(n * 1).toLocaleTimeString("en")
   );
+}
+
+function welcome() {
+  let now = new Date(localStorage.getItem("epoch")).getTime();
+  if (localStorage.getItem("unit") === "seconds") {
+    now = Math.floor(now / 1000);
+  }
+
+  const welcomeTemplate = `Welcome to unixtime.app!\n\nJust write or paste text with timestamps here, like: ${now}!\n\nUse the settings down below to differentiate between seconds and millis and configure the minimum year of your timestamps.\n\n\nBtw: Also works good for JSON API responses!\n\n{\n  "id": 1,\n  "createdAt": ${now}\n}`;
+  input.value = welcomeTemplate;
+
+  this.setTimeout(() => parse(), 500);
 }
 
 function isElectron() {

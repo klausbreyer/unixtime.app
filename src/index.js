@@ -25,7 +25,7 @@ window.addEventListener("DOMContentLoaded", function () {
 });
 
 window.addEventListener("DOMContentLoaded", function () {
-  if (window.electron) {
+  if (isElectron()) {
     this.document.getElementById("support").style.display = "none";
   }
 });
@@ -37,36 +37,38 @@ if (input.addEventListener) {
 }
 
 function parse() {
-  console.log("parse");
-
   const numberPattern = /\d+/g;
   const numbers = input.value.match(numberPattern);
   if (!numbers) {
     output.value = input.value;
-    console.log("nothing");
-
     return;
   }
 
   let minimum = Math.floor(new Date(localStorage.getItem("epoch")).getTime());
-
-  console.log("seconds", minimum);
-
   if (localStorage.getItem("unit") === "seconds") {
     minimum = Math.floor(minimum / 1000);
-    console.log("seconds", minimum);
   }
-  const filtered = numbers.filter((n) => n > minimum);
+  const toReplace = numbers.filter((n) => n > minimum);
 
   output.innerHTML = input.value;
   hljs.highlightAll();
 
   let text = output.innerHTML;
-  filtered.forEach((n) => {
+  let showAlert = false;
+  toReplace.forEach((n, i) => {
+    if (!isElectron() && i > 2) {
+      showAlert = true;
+      return;
+    }
     text = text.replace(n, `<span class="inverse">${dateTimeString(n)}</span>`);
-    // text = text.replace(n, `${dateTimeString(n)}`);
   });
   output.innerHTML = text;
+
+  if (showAlert && isMac()) {
+    alert(
+      "Hey, just a little heads-up!\n\nYour results have been limited to 3. To replace more, please download the desktop application from the Mac App Store. You can find the link below.\n\nYour support is greatly appreciated to ensure the continued development of the application!\n\nCheers, Klaus."
+    );
+  }
 }
 
 function dateTimeString(n) {
@@ -78,4 +80,12 @@ function dateTimeString(n) {
     " " +
     new Date(n * 1).toLocaleTimeString("en")
   );
+}
+
+function isElectron() {
+  return !!window.electron;
+}
+
+function isMac() {
+  return window.navigator.platform.includes("Mac");
 }

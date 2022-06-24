@@ -1323,6 +1323,11 @@ electron-builder@^23.1.0:
     update-notifier "^5.1.0"
     yargs "^17.0.1"
 
+electron-find@^1.0.7:
+  version "1.0.7"
+  resolved "https://registry.yarnpkg.com/electron-find/-/electron-find-1.0.7.tgz#12a861fd4f264f897075fff5c2e612556bc21c83"
+  integrity sha512-C2FQJuk8567P2a2loBNwl5c8kwOTQVMB0capgHtPI7zKwZG16X0UxG+sNYZExQfnJ0PA+ecECA/4LcXxQa2TCA==
+
 electron-notarize@^1.1.1:
   version "1.2.1"
   resolved "https://registry.yarnpkg.com/electron-notarize/-/electron-notarize-1.2.1.tgz#347c18eca8e29dddadadee511b870c13d4008baf"

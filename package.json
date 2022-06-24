@@ -6,9 +6,9 @@
   "author": "Klaus Breyer <kb@v01.io>",
   "license": "UNLICENSED",
   "devDependencies": {
-    "@electron-forge/cli": "^6.0.0-beta.63",
-    "electron": "^19.0.3",
-    "electron-builder": "^23.0.3"
+    "@electron-forge/cli": "^6.0.0-beta.64",
+    "electron": "^19.0.6",
+    "electron-builder": "^23.1.0"
   },
   "scripts": {
     "start": "electron-forge start",

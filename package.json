@@ -1,6 +1,6 @@
 {
   "name": "unixtime",
-  "version": "0.3.1",
+  "version": "0.4.0",
   "main": "main.js",
   "repository": "git@github.com:klausbreyer/unixtime.app.git",
   "author": "Klaus Breyer <kb@v01.io>",
@@ -8,7 +8,8 @@
   "devDependencies": {
     "@electron-forge/cli": "^6.0.0-beta.63",
     "electron": "^19.0.3",
-    "electron-builder": "^23.0.3"
+    "electron-builder": "^23.0.3",
+    "electron-windows-store": "^2.1.0"
   },
   "scripts": {
     "start": "electron-forge start",
@@ -22,6 +23,17 @@
   "config": {},
   "build": {
     "appId": "app.unixtime",
+    "win": {
+      "target": [
+        {
+          "target": "msi",
+          "arch": [
+            "x64",
+            "ia32"
+          ]
+        }
+      ]
+    },
     "mac": {
       "target": [
         {

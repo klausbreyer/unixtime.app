@@ -1,0 +1,9 @@
+rm -r dist
+rm -r windows-store
+
+cp build/512x512@2x.png build/icon.png
+
+yarn run pack // dist
+
+
+yarn run electron-windows-store --input-directory C:\Users\kb\unixtime.app\dist\win-unpacked\ --output-directory C:\Users\kb\unixtime.app\windows-store --package-version 0.4.0.1 --package-name unixtime

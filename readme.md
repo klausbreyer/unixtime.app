@@ -10,3 +10,7 @@ Configuration Options are vailable: Chose between milliseconds and seconds and d
 Works for a list of timestamps, but also full api responses and whatever text you provide.
 
 Feedback is welcome.
+
+tags:
+
+unixtimestamp, unixtime, epoch, unix epoch, Epoch Unix Timestamp, unix time stamp, Posix time

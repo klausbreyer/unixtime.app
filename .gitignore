@@ -16,3 +16,4 @@ dist
 out
 embedded.provisionprofile
 build/icon.png
+/windows-store

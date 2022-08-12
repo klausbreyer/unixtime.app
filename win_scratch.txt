@@ -6,4 +6,14 @@ cp build/512x512@2x.png build/icon.png
 yarn run pack // dist
 
 
-yarn run electron-windows-store --input-directory C:\Users\kb\unixtime.app\dist\win-unpacked\ --output-directory C:\Users\kb\unixtime.app\windows-store --package-version 0.4.0.1 --package-name unixtime
+yarn run electron-windows-store --input-directory C:\Users\kb\unixtime.app\dist\win-unpacked\ --output-directory C:\Users\kb\unixtime.app\windows-store --package-version 0.4.0.2 --package-name unixtime
+
+
+PS C:\Users\kb> cat .\.electron-windows-store
+{
+  "desktopConverter": false,
+  "expandedBaseImage": false,
+  "publisher": "CN=0B98E5CE-51E7-4295-91E6-106184366717",
+  "windowsKit": "C:\\Program Files (x86)\\Windows Kits\\10\\bin\\10.0.22621.0\\x64",
+  "devCert": "C:\\Users\\kb\\AppData\\Roaming\\electron-windows-store\\0B98E5CE-51E7-4295-91E6-106184366717\\0B98E5CE-51E7-4295-91E6-106184366717.pfx"
+}

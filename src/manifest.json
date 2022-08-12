@@ -1,0 +1,21 @@
+{
+  "background_color": "#ffffff",
+  "description": "unixtime.app is an Web App to replace unix timestamps in large chunks of text data.",
+  "dir": "ltr",
+  "display": "standalone",
+  "name": "www.unixtime",
+  "orientation": "any",
+  "scope": "/",
+  "short_name": "www.unixtime",
+  "start_url": "/",
+  "theme_color": "#ffffff",
+  "icons": [
+    {
+      "src": "images/undefined.png"
+    },
+    {
+      "src": "/favicon.ico",
+      "type": "image/x-icon"
+    }
+  ]
+}

@@ -3,7 +3,7 @@
 <head>
     <title>unixtime.app</title>
     <meta charset="utf-8" />
-
+    <link rel="manifest" href="manifest.json" />
     <link rel="icon" href="favicon.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="description"
@@ -11,6 +11,11 @@
 
     <link rel="stylesheet" href="index.css" />
     <link rel="stylesheet" href="./lib/highlight.js-11.5.1/github-dark.min.css">
+    <script type="module">
+        import 'https://cdn.jsdelivr.net/npm/@pwabuilder/pwaupdate';
+        const el = document.createElement('pwa-update');
+        document.body.appendChild(el);
+    </script>
 </head>
 
 <body>

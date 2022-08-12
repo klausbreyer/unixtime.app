@@ -31,3 +31,6 @@ patch:
 minor:
 	yarn version --minor
 	make magic
+
+icon:
+	convert -resize x16 -gravity center -crop 16x16+0+0 build/Artwork.png -flatten -colors 256 -background transparent src/favicon.ico

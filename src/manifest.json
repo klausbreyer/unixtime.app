@@ -11,7 +11,7 @@
   "theme_color": "#ffffff",
   "icons": [
     {
-      "src": "images/undefined.png"
+      "src": "https://www.unixtime.app/images/undefined.png"
     },
     {
       "src": "/favicon.ico",

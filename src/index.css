@@ -26,6 +26,17 @@ h6 {
   margin: 0;
   padding: 0;
 }
+
+h1 {
+  font-size: 24px;
+}
+
+h2 {
+  font-size: 18px;
+}
+p {
+  font-size: 15px;
+}
 pre,
 code,
 textarea {
@@ -41,6 +52,14 @@ main {
 
 article {
   padding: 10px;
+  max-width: 23.7cm;
+  padding-bottom: 2.3cm;
+}
+article img {
+  max-width: 100%;
+}
+article div#support img {
+  height: 5em;
 }
 div#app {
   flex-grow: 1;
@@ -57,10 +76,12 @@ textarea {
   height: 100%;
   color: #c9d1d9;
   background-color: #0d1117;
-  overflow: scroll;
   border-width: 0;
   white-space: pre-wrap;
   font-size: 0.9rem;
+}
+pre {
+  overflow: scroll;
 }
 
 .inverse {
@@ -75,6 +96,8 @@ textarea {
   border: none;
   resize: none;
   outline: none;
+
+  overflow: none;
 }
 
 header {

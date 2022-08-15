@@ -76,7 +76,7 @@ function parse() {
   let text = output.innerHTML;
   let showAlert = false;
   toReplace.forEach((n, i) => {
-    if (!isElectron() && i > 2) {
+    if (!isElectron() && !isPwa() && i > 2) {
       showAlert = true;
       return;
     }

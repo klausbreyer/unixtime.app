@@ -86,7 +86,7 @@ function parse() {
 
   if (showAlert && isBrowserMac()) {
     alert(
-      "Hey, just a little heads-up!\n\nYour results have been limited to 3. To replace more, please download the desktop application from the Mac App Store. You can find the link below.\n\nYour support is greatly appreciated to ensure the continued development of the application!\n\nCheers, Klaus."
+      "Hey, just a little heads-up!\n\nYour results are limited to 3. Please download the desktop application from the Mac App Store to replace more. You can find the link below.\n\nYour support is greatly appreciated to ensure the continued development of the application!\n\nCheers, Klaus."
     );
   }
 }
@@ -108,7 +108,7 @@ function welcome() {
     now = Math.floor(now / 1000);
   }
 
-  const welcomeTemplate = `Welcome to unixtime.app!\n\nJust write or paste text with timestamps here, like: ${now}!\n\nUse the settings down below to differentiate between seconds and millis and configure the minimum year of your timestamps.\n\n\nBtw: Also works good for JSON API responses!\n\n{\n  "id": 1,\n  "createdAt": ${now}\n}`;
+  const welcomeTemplate = `Welcome to unixtime.app!\n\nJust write or paste text with timestamps here, like ${now}!\n\nUse the settings down below to differentiate between seconds and millis and configure the minimum year of your timestamps.\n\n\nBtw: Also works well for JSON API responses!\n\n{\n  "id": 1,\n  "createdAt": ${now}\n}`;
   input.value = welcomeTemplate;
 
   this.setTimeout(() => parse(), 500);

@@ -1,12 +1,12 @@
 {
   "background_color": "#ffffff",
-  "description": "unixtime.app is an Web App to replace unix timestamps in large chunks of text data.",
+  "description": "An API developers tool for bulk timestamp conversion.",
   "dir": "ltr",
   "display": "standalone",
   "name": "www.unixtime",
   "orientation": "any",
   "scope": "/",
-  "short_name": "www.unixtime",
+  "short_name": "www.unixtime.app",
   "start_url": "/",
   "theme_color": "#ffffff",
   "icons": [

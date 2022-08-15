@@ -19,122 +19,129 @@
 </head>
 
 <body>
-
     <main>
-        <textarea
-            id="input">write or paste text with timestamps here!</textarea>
-        <pre disabled><code id="output"  class="language-json"></code></pre>
+        <header>
+            <nav>
+                <h1>
+                    <a href="/">unixtime.app</a>
+                </h1>
+                <!-- <a href="/">Workflow</a> -->
+                <a href="support.html">Support</a>
+                <a
+                    href="https://v01.io/category/v01-software/unixtime-app/">Blog</a>
+                <p>&copy;<a href="https://v01.software/"
+                        target="_blank">v01.software</a></p>
+                <a href="https://v01.io/imprint/" target="_blank">Contact</a>
+            </nav>
+            <div id="support">
+                <a href="https://apps.apple.com/de/app/unixtime-app/id1627321235?l=en&mt=12"
+                    target="_blank"><img src="./images/mas.svg" /></a>
+                <a href="https://apps.apple.com/de/app/unixtime-app/id1627321235?l=en&mt=12"
+                    target="_blank"><img src="./images/ms.svg" /></a>
+            </div>
+        </header>
+
+        <div id="app">
+            <textarea id="input"></textarea>
+            <pre disabled><code id="output"  class="language-json"></code></pre>
+        </div>
     </main>
 
     <footer>
-        <p>
-            unixtime.app &copy; <a href="https://v01.software/"
-                target="_blank">v01.software</a>!
-        </p>
-        <p>
-            Convert:
+        <div id="settings">
+            <h3>Settings</h3>
             <select id="unit">
-                <option>seconds</option>
-                <option>millis</option>
+                <option value="seconds">Convert seconds</option>
+                <option value="millis">Convert milliseconds</option>
             </select>
-            since
+
             <select id="epoch">
-                <option>2050</option>
-                <option>2049</option>
-                <option>2048</option>
-                <option>2047</option>
-                <option>2046</option>
-                <option>2045</option>
-                <option>2044</option>
-                <option>2043</option>
-                <option>2042</option>
-                <option>2041</option>
-                <option>2040</option>
-                <option>2039</option>
-                <option>2038</option>
-                <option>2037</option>
-                <option>2036</option>
-                <option>2035</option>
-                <option>2034</option>
-                <option>2033</option>
-                <option>2032</option>
-                <option>2031</option>
-                <option>2030</option>
-                <option>2029</option>
-                <option>2028</option>
-                <option>2027</option>
-                <option>2026</option>
-                <option>2025</option>
-                <option>2024</option>
-                <option>2023</option>
-                <option>2022</option>
-                <option>2021</option>
-                <option>2020</option>
-                <option>2019</option>
-                <option>2018</option>
-                <option>2017</option>
-                <option>2016</option>
-                <option>2015</option>
-                <option>2014</option>
-                <option>2013</option>
-                <option>2012</option>
-                <option>2011</option>
-                <option>2010</option>
-                <option>2009</option>
-                <option>2008</option>
-                <option>2007</option>
-                <option>2006</option>
-                <option>2005</option>
-                <option>2004</option>
-                <option>2003</option>
-                <option>2002</option>
-                <option>2001</option>
-                <option>2000</option>
-                <option>1999</option>
-                <option>1998</option>
-                <option>1997</option>
-                <option>1996</option>
-                <option>1995</option>
-                <option>1994</option>
-                <option>1993</option>
-                <option>1992</option>
-                <option>1991</option>
-                <option>1990</option>
-                <option>1989</option>
-                <option>1988</option>
-                <option>1987</option>
-                <option>1986</option>
-                <option>1985</option>
-                <option>1984</option>
-                <option>1983</option>
-                <option>1982</option>
-                <option>1981</option>
-                <option>1980</option>
-                <option>1979</option>
-                <option>1978</option>
-                <option>1977</option>
-                <option>1976</option>
-                <option>1975</option>
-                <option>1974</option>
-                <option>1973</option>
-                <option>1972</option>
-                <option>1971</option>
-                <option>Epoch</option>
+                <option value="2050">since 2050</option>
+                <option value="2049">since 2049</option>
+                <option value="2048">since 2048</option>
+                <option value="2047">since 2047</option>
+                <option value="2046">since 2046</option>
+                <option value="2045">since 2045</option>
+                <option value="2044">since 2044</option>
+                <option value="2043">since 2043</option>
+                <option value="2042">since 2042</option>
+                <option value="2041">since 2041</option>
+                <option value="2040">since 2040</option>
+                <option value="2039">since 2039</option>
+                <option value="2038">since 2038</option>
+                <option value="2037">since 2037</option>
+                <option value="2036">since 2036</option>
+                <option value="2035">since 2035</option>
+                <option value="2034">since 2034</option>
+                <option value="2033">since 2033</option>
+                <option value="2032">since 2032</option>
+                <option value="2031">since 2031</option>
+                <option value="2030">since 2030</option>
+                <option value="2029">since 2029</option>
+                <option value="2028">since 2028</option>
+                <option value="2027">since 2027</option>
+                <option value="2026">since 2026</option>
+                <option value="2025">since 2025</option>
+                <option value="2024">since 2024</option>
+                <option value="2023">since 2023</option>
+                <option value="2022">since 2022</option>
+                <option value="2021">since 2021</option>
+                <option value="2020">since 2020</option>
+                <option value="2019">since 2019</option>
+                <option value="2018">since 2018</option>
+                <option value="2017">since 2017</option>
+                <option value="2016">since 2016</option>
+                <option value="2015">since 2015</option>
+                <option value="2014">since 2014</option>
+                <option value="2013">since 2013</option>
+                <option value="2012">since 2012</option>
+                <option value="2011">since 2011</option>
+                <option value="2010">since 2010</option>
+                <option value="2009">since 2009</option>
+                <option value="2008">since 2008</option>
+                <option value="2007">since 2007</option>
+                <option value="2006">since 2006</option>
+                <option value="2005">since 2005</option>
+                <option value="2004">since 2004</option>
+                <option value="2003">since 2003</option>
+                <option value="2002">since 2002</option>
+                <option value="2001">since 2001</option>
+                <option value="2000">since 2000</option>
+                <option value="1999">since 1999</option>
+                <option value="1998">since 1998</option>
+                <option value="1997">since 1997</option>
+                <option value="1996">since 1996</option>
+                <option value="1995">since 1995</option>
+                <option value="1994">since 1994</option>
+                <option value="1993">since 1993</option>
+                <option value="1992">since 1992</option>
+                <option value="1991">since 1991</option>
+                <option value="1990">since 1990</option>
+                <option value="1989">since 1989</option>
+                <option value="1988">since 1988</option>
+                <option value="1987">since 1987</option>
+                <option value="1986">since 1986</option>
+                <option value="1985">since 1985</option>
+                <option value="1984">since 1984</option>
+                <option value="1983">since 1983</option>
+                <option value="1982">since 1982</option>
+                <option value="1981">since 1981</option>
+                <option value="1980">since 1980</option>
+                <option value="1979">since 1979</option>
+                <option value="1978">since 1978</option>
+                <option value="1977">since 1977</option>
+                <option value="1976">since 1976</option>
+                <option value="1975">since 1975</option>
+                <option value="1974">since 1974</option>
+                <option value="1973">since 1973</option>
+                <option value="1972">since 1972</option>
+                <option value="1971">since 1971</option>
+                <option value="Epoch">since Epoch</option>
             </select>
-        </p>
 
-
-        <div id="support">
-            <hr /><a
-                href="https://apps.apple.com/de/app/unixtime-app/id1627321235?l=en&mt=12"
-                target="_blank"><img src="./images/mas.svg" /></a>
-            <!-- <a href="https://apps.apple.com/de/app/unixtime-app/id1627321235?l=en&mt=12"
-                target="_blank"><img src="./images/ms.svg" /></a> -->
-            <p>Time saved? Then consider downloading the paid app to support
-                the development. :)
-            </p>
         </div>
     </footer>
+
 
     <script src="index.js"></script>
 

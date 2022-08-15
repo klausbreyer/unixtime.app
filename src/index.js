@@ -41,7 +41,7 @@ window.addEventListener("DOMContentLoaded", function () {
 });
 
 window.addEventListener("DOMContentLoaded", function () {
-  if (isElectron()) {
+  if (isElectron() || isPwa()) {
     this.document.getElementById("support").style.display = "none";
   }
 });
@@ -84,7 +84,7 @@ function parse() {
   });
   output.innerHTML = text;
 
-  if (showAlert && isMac()) {
+  if (showAlert && isBrowserMac()) {
     alert(
       "Hey, just a little heads-up!\n\nYour results have been limited to 3. To replace more, please download the desktop application from the Mac App Store. You can find the link below.\n\nYour support is greatly appreciated to ensure the continued development of the application!\n\nCheers, Klaus."
     );
@@ -118,6 +118,15 @@ function isElectron() {
   return !!window.electron;
 }
 
-function isMac() {
+function isBrowserMac() {
   return window.navigator.platform.includes("Mac");
 }
+
+function isPwa() {
+  return ["fullscreen", "standalone", "minimal-ui"].some(
+    (displayMode) =>
+      window.matchMedia("(display-mode: " + displayMode + ")").matches
+  );
+}
+
+console.log("pwa", isPwa());

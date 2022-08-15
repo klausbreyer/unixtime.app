@@ -42,7 +42,7 @@ window.addEventListener("DOMContentLoaded", function () {
 
 window.addEventListener("DOMContentLoaded", function () {
   if (isElectron() || isPwa()) {
-    this.document.getElementById("support").style.display = "none";
+    this.document.querySelector("header").style.display = "none";
   }
 });
 

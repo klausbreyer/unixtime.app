@@ -1,6 +1,6 @@
 # unixtime.app - fulltext timestamp conversion
 
-## API Developers: Stop the tedious search for timestamps. Just give everything to this tool and get the already converted results highlighted
+## An API developers tool for bulk timestamp conversion
 
 A unix epoch timestamp conversion tool to convert and highlight complete texts, whole API responses, and lists with timestamps. Everything that looks like a timestamp since a specific year will just be replaced - simple and easy.
 

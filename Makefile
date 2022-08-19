@@ -21,9 +21,7 @@ magic:
 	make magic-electron
 
 build-parcel:
-	rm -rf dist-parcel
-	yarn run parcel  build src/index.html --public-url . --dist-dir dist-parcel
-	cp src/images/* dist-parcel/images/
+	yarn run build-parcel
 
 magic-electron:
 	make build-electron

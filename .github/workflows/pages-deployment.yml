@@ -14,7 +14,7 @@ jobs:
           sudo apt-get install nodejs yarn
       - name: Build
         run: |
-          yarn && yarn run parcel build src/index.html --public-url . --dist-dir dist-parcel
+          yarn && yarn run build-parcel
       - name: Publish
         uses: cloudflare/pages-action@1
         with:

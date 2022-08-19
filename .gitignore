@@ -16,3 +16,5 @@ dist
 out
 embedded.provisionprofile
 build/icon.png
+dist-parcel
+.parcel-cache

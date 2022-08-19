@@ -9,14 +9,17 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v3
-      # Run your project's build step
-      # - name: Build
-      #   run: npm install && npm run build
+      - name: Setup
+        run: |
+          sudo apt-get install nodejs yarn
+      - name: Build
+        run: |
+          yarn && yarn run parcel build src/index.html --public-url . --dist-dir dist-parcel
       - name: Publish
         uses: cloudflare/pages-action@1
         with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
           projectName: unixtime-app # e.g. 'my-project'
-          directory: src # e.g. 'dist'
+          directory: dist-parcel # e.g. 'dist'
           gitHubToken: ${{ secrets.GITHUB_TOKEN }}

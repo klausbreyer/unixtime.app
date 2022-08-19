@@ -1,46 +1,16 @@
 <html>
 
 <head>
+    <include src="src/metas.html"></include>
     <title>unixtime.app</title>
-    <meta charset="utf-8" />
-    <link rel="manifest" href="manifest.json" />
-    <link rel="icon" href="favicon.png" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="description"
         content="unixtime.app is an Web App to replace unix timestamps in large chunks of text data." />
 
-    <link rel="stylesheet" href="index.css" />
-    <link rel="stylesheet" href="./lib/highlight.js-11.5.1/github-dark.min.css">
-    <script type="module">
-        import 'https://cdn.jsdelivr.net/npm/@pwabuilder/pwaupdate';
-        const el = document.createElement('pwa-update');
-        document.body.appendChild(el);
-    </script>
 </head>
 
 <body>
     <main>
-        <header>
-            <nav>
-                <h1>
-                    <a href="/">unixtime.app</a>
-                </h1>
-                <a href="/story.html">Background Story</a>
-                <a href="support.html">Support</a>
-                <a href="https://v01.io/category/v01-software/unixtime-app/"
-                    target="_blank">Blog</a>
-                <p>&copy;<a href="https://v01.software/"
-                        target="_blank">v01.software</a></p>
-                <a href="https://v01.io/imprint/" target="_blank">Contact</a>
-            </nav>
-            <div id="support">
-                <a href="https://apps.apple.com/de/app/unixtime-app/id1627321235?l=en&mt=12"
-                    target="_blank"><img src="./images/mas.svg" /></a>
-                <a href="https://apps.microsoft.com/store/detail/unixtimeapp/9NXBTRZH3ZQN?hl=de-de&gl=de"
-                    target="_blank"><img src="./images/ms.svg" /></a>
-            </div>
-        </header>
-
+        <include src="src/header.html"></include>
         <div id="app">
             <textarea id="input"></textarea>
             <pre disabled><code id="output"  class="language-json"></code></pre>
@@ -138,12 +108,11 @@
                 <option value="1971">since 1971</option>
                 <option value="Epoch">since Epoch</option>
             </select>
-
         </div>
     </footer>
 
 
-    <script src="index.js"></script>
+    <script src="app.js"></script>
 
     <script src="./lib/highlight.js-11.5.1/highlight.min.js"></script>
     <script>hljs.highlightAll();</script>

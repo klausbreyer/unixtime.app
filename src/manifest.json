@@ -14,7 +14,7 @@
       "src": "https://www.unixtime.app/images/logo.png"
     },
     {
-      "src": "/favicon.ico",
+      "src": "favicon.ico",
       "type": "image/x-icon"
     }
   ]

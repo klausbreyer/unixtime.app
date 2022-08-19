@@ -9,7 +9,6 @@ let dirty = false;
 epochElement.addEventListener("change", function () {
   localStorage.setItem("epoch", epochElement.value);
   parse();
-  console.log(dirty);
   if (!dirty) {
     welcome();
   }
@@ -18,7 +17,6 @@ epochElement.addEventListener("change", function () {
 unitElement.addEventListener("change", function () {
   localStorage.setItem("unit", unitElement.value);
   parse();
-  console.log(dirty);
 
   if (!dirty) {
     welcome();
@@ -128,5 +126,3 @@ function isPwa() {
       window.matchMedia("(display-mode: " + displayMode + ")").matches
   );
 }
-
-console.log("pwa", isPwa());

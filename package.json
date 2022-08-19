@@ -1,21 +1,24 @@
 {
   "name": "unixtime",
-  "version": "4.0.4",
+  "version": "4.0.5",
   "main": "main.js",
+  "targets": {
+    "main": false
+  },
   "repository": "git@github.com:klausbreyer/unixtime.app.git",
   "author": "Klaus Breyer <kb@v01.io>",
   "license": "UNLICENSED",
   "devDependencies": {
     "@electron-forge/cli": "^6.0.0-beta.65",
+    "@parcel/packager-raw-url": "2.7.0",
+    "@parcel/transformer-webmanifest": "2.7.0",
     "electron": "^20.0.2",
-    "electron-builder": "^23.3.3"
+    "electron-builder": "^23.3.3",
+    "parcel": "^2.7.0",
+    "posthtml-doctype": "^1.1.1",
+    "posthtml-include": "^1.7.4"
   },
-  "scripts": {
-    "start": "electron-forge start",
-    "package": "electron-forge package",
-    "pack": "electron-builder --dir",
-    "dist": "electron-builder"
-  },
+  "scripts": {},
   "dependencies": {
     "electron-squirrel-startup": "^1.0.0"
   },

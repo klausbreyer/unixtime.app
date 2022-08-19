@@ -81,7 +81,7 @@ textarea {
   font-size: 0.9rem;
 }
 pre {
-  overflow: scroll;
+  overflow: hidden;
 }
 
 .inverse {
@@ -97,7 +97,7 @@ textarea {
   resize: none;
   outline: none;
 
-  overflow: none;
+  overflow: auto;
 }
 
 header {
@@ -142,10 +142,8 @@ div#settings {
   font-weight: normal;
   color: #1d1e1f;
   background-color: #c9d1d9;
-
-  padding: 5px;
+  padding: 10px 20px;
   width: 150px;
-  /* height: 80px; */
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;

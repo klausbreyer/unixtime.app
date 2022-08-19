@@ -50,7 +50,12 @@ package-electron:
 
 # just to create the favicon.ico
 icon:
-	convert -resize x16 -gravity center -crop 16x16+0+0 build/Artwork.png -flatten -colors 256 -background transparent src/favicon.ico
+	convert -resize x16 -gravity center -crop 16x16+0+0 src/images/logo.png -flatten -colors 256 -background transparent src/favicon.ico
+	convert src/images/logo.png  -resize 512x512 src/images/logo-512x512.png
+	convert src/images/logo.png  -resize 192x192 src/images/logo-192x192.png
+	convert src/images/logo.png  -resize 256x256 src/images/logo-256x256.png
+	convert src/images/logo.png  -resize 384x384 src/images/logo-384x384.png
+
 
 
 #unused

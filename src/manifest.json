@@ -1,9 +1,9 @@
 {
   "background_color": "#ffffff",
-  "description": "An API developers tool for bulk timestamp conversion.",
+  "description": "An App for easy unix timestamp conversion when working with API responses.",
   "dir": "ltr",
   "display": "standalone",
-  "name": "www.unixtime",
+  "name": "www.unixtime.app",
   "orientation": "any",
   "scope": "/",
   "short_name": "www.unixtime.app",

@@ -6,7 +6,7 @@ start-electron:
 
 start-parcel:
 	rm -rf dist-parcel
-	yarn run parcel  src/index.html --public-url . --dist-dir dist-parcel
+	yarn run parcel src/index.html
 
 patch:
 	yarn version --patch

@@ -2,11 +2,11 @@
 <html lang="en">
 
 <head>
-    <include src="src/metas.html"></include>
-    <title>unixtime.app</title>
-    <meta name="description"
-        content="unixtime.app is an Web App to replace unix timestamps in large chunks of text data." />
-
+    <include src="src/head.html" locals='{
+        "title": "Background Story",
+        "description": "Hi, I am Klaus Breyer. And I am the author of unixtime.app: An API developers tool for bulk timestamp conversion. Here I want to tell the story of how I scratched my own itch and how this turned into a product.",
+        "url": "/story.html"
+    }' />
 </head>
 
 <body>
@@ -14,7 +14,7 @@
         <include src="src/header.html"></include>
         <article>
             <h1>The unixtime.app background Story</h1>
-            <p> Hi, I'm Klaus Breyer. And I am the author of unixtime.app: An
+            <p> Hi, Iam Klaus Breyer. And I am the author of unixtime.app: An
                 API
                 developers
                 tool for bulk timestamp conversion.</p>

@@ -19,7 +19,7 @@
     "posthtml-include": "^1.7.4"
   },
   "scripts": {
-    "build-parcel": "rm -rf dist-parcel && parcel  build src/index.html --public-url . --dist-dir dist-parcel && cp src/images/* dist-parcel/images/ && cp src/pwabuilder-sw.js dist-parcel && cp src/favicon.ico dist-parcel"
+    "build-parcel": "rm -rf dist-parcel && parcel  build src/index.html --public-url . --dist-dir dist-parcel && cp src/images/* dist-parcel/images/ && cp src/favicon.ico dist-parcel"
   },
   "dependencies": {
     "electron-squirrel-startup": "^1.0.0"

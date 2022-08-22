@@ -10,11 +10,14 @@ body {
 a {
   color: #1d1e1f;
 }
-a:hover {
+
+a#logo {
+  font-size: 24px;
   text-decoration: none;
-}
-h1 a {
-  text-decoration: none;
+  font-weight: bold;
+  &:hover {
+    text-decoration: none;
+  }
 }
 
 h1,
@@ -28,15 +31,18 @@ h6 {
 }
 
 h1 {
-  font-size: 24px;
+  font-size: 30px;
 }
 
 h2 {
-  font-size: 18px;
+  font-size: 20px;
 }
+
 p {
   font-size: 15px;
+  line-height: 1.3em;
 }
+
 pre,
 code,
 textarea {
@@ -50,17 +56,6 @@ main {
   height: 100vh;
 }
 
-article {
-  padding: 10px;
-  max-width: 23.7cm;
-  padding-bottom: 2.3cm;
-}
-article img {
-  max-width: 100%;
-}
-article div#support img {
-  height: 5em;
-}
 div#app {
   flex-grow: 1;
   display: flex;
@@ -114,14 +109,35 @@ nav {
   flex-wrap: wrap;
 }
 
+// support
 div#support {
   display: flex;
-
   gap: 10px;
 }
 
 div#support img {
   height: 3em;
+}
+
+article {
+  div#support {
+    padding: 2.5em;
+    justify-content: center;
+    img {
+      height: 5em;
+    }
+  }
+}
+
+article {
+  margin: auto;
+  padding: 10px;
+  max-width: 23.7cm;
+  padding-bottom: 2.3cm;
+}
+
+article img {
+  max-width: 100%;
 }
 
 /* in case I want to add some more elements on the bottom right. */

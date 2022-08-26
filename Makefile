@@ -8,6 +8,9 @@ start-parcel:
 	rm -rf dist-parcel
 	yarn run parcel src/index.html
 
+start-worker:
+	npx wrangler dev worker/index.js
+
 patch:
 	yarn version --patch
 	make magic

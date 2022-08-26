@@ -4,6 +4,9 @@ const path = require("path");
 
 const createWindow = () => {
   // Create the browser window.
+  console.log(path.join(__dirname, "preload.js"));
+  console.log(path.join(__dirname, "../dist-parcel/index.html"));
+
   const mainWindow = new BrowserWindow({
     width: 1280,
     height: 800,
@@ -13,7 +16,7 @@ const createWindow = () => {
   });
 
   // and load the index.html of the app.
-  mainWindow.loadFile("dist-parcel/index.html");
+  mainWindow.loadFile(path.join(__dirname, "../dist-parcel/index.html"));
 
   // Open the DevTools.
   // mainWindow.webContents.openDevTools()

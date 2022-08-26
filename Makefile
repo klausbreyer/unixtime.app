@@ -17,11 +17,14 @@ minor:
 	make magic
 
 magic:
-	make build-parcel
+	make build-parcel-for-electron
 	make magic-electron
 
-build-parcel:
-	yarn run build-parcel
+build-parcel-for-electron:
+	rm -rf dist-parcel && yarn run parcel build src/index.html --public-url . --dist-dir dist-parcel && cp src/images/* dist-parcel/images/ && cp src/favicon.ico dist-parcel
+
+build-parcel-for-web:
+	rm -rf dist-parcel && yarn run parcel build src/index.html --public-url / --dist-dir dist-parcel && cp src/images/* dist-parcel/images/ && cp src/favicon.ico dist-parcel
 
 magic-electron:
 	make build-electron

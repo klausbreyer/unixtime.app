@@ -14,8 +14,9 @@ jobs:
           sudo apt-get install nodejs yarn
       - name: Build
         run: |
-          yarn && yarn run build-parcel
-      - name: Publish
+          yarn && make build-parcel-for-web
+
+      - name: Publish Page
         uses: cloudflare/pages-action@1
         with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
@@ -23,3 +24,11 @@ jobs:
           projectName: unixtime-app # e.g. 'my-project'
           directory: dist-parcel # e.g. 'dist'
           gitHubToken: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Publish Worker
+        uses: cloudflare/wrangler-action@2.0.0
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          workingDirectory: 'worker'
+          command: publish index.js --name unixtime-app-refs
+

@@ -1,0 +1,18 @@
+{
+  "private": true,
+  "name": "unixtime-app-refs",
+  "version": "1.0.0",
+  "description": "A template for kick starting a Cloudflare Workers project",
+  "main": "index.js",
+  "scripts": {
+    "publish": " wrangler publish index.js --name unixtime-app-refs",
+    "start": "wrangler dev  index.js",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "format": "prettier --write '**/*.{js,css,json,md}'"
+  },
+  "author": "{{ authors }}",
+  "license": "MIT",
+  "devDependencies": {
+    "prettier": "^1.18.2"
+  }
+}

@@ -24,6 +24,12 @@ unitElement.addEventListener("change", function () {
 });
 
 window.addEventListener("DOMContentLoaded", function () {
+  if (isElectron() || isPwa()) {
+    this.document.querySelector("header").style.display = "none";
+  }
+});
+
+window.addEventListener("DOMContentLoaded", function () {
   if (!localStorage.getItem("epoch")) {
     localStorage.setItem("epoch", new Date().getFullYear());
   }
@@ -38,10 +44,16 @@ window.addEventListener("DOMContentLoaded", function () {
   welcome();
 });
 
+// bridged tracking for header links
 window.addEventListener("DOMContentLoaded", function () {
-  if (isElectron() || isPwa()) {
-    this.document.querySelector("header").style.display = "none";
+  const firstFive = location.pathname.substring(0, 5);
+  const restUrl = location.pathname.substring(5);
+  if (firstFive !== "/ref/") {
+    return;
   }
+
+  document.querySelector("#mss-link").href = "/mss/" + restUrl;
+  document.querySelector("#mas-link").href = "/mas/" + restUrl;
 });
 
 input.addEventListener(

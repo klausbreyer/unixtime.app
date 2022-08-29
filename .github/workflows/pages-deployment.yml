@@ -25,10 +25,17 @@ jobs:
           directory: dist-parcel # e.g. 'dist'
           gitHubToken: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Publish Worker
+      - name: Publish Worker Refs
         uses: cloudflare/wrangler-action@2.0.0
         with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           workingDirectory: 'worker'
           command: publish index.js --name unixtime-app-refs
+
+      - name: Publish Worker Stats
+        uses: cloudflare/wrangler-action@2.0.0
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          workingDirectory: 'worker'
+          command: publish stats.js --name unixtime-app-stats
 

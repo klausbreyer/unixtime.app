@@ -11,6 +11,9 @@ start-parcel:
 start-worker:
 	npx wrangler dev worker/index.js
 
+start-worker-stats:
+	npx wrangler dev worker/stats.js
+
 patch:
 	yarn version --patch
 	make magic

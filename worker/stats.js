@@ -26,14 +26,15 @@ async function handleRequest(request) {
 
     for (let i = 0; i < keys.length; i++) {
       const name = keys[i].name;
-      console.log(name);
-
+      const day = name.substr(0, "2002-01-01".length);
       const value = await REFS.get(name);
 
-      if (!agg[value]) {
-        agg[value] = [];
+      const index = `${day}\t${value}`;
+
+      if (!agg[index]) {
+        agg[index] = [];
       }
-      agg[value].push(name);
+      agg[index].push(name);
     }
 
     list_complete = list.list_complete;

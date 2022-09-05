@@ -7,4 +7,4 @@ Configuration Options are available: Chose between milliseconds and seconds and 
 
 This App works for a list of timestamps, complete API responses, and whatever text you provide.
 
-Feedback is welcome.
+Feedback is welcome..

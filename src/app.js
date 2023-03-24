@@ -24,12 +24,6 @@ unitElement.addEventListener("change", function () {
 });
 
 window.addEventListener("DOMContentLoaded", function () {
-  if (isElectron() || isPwa()) {
-    this.document.querySelector("header").style.display = "none";
-  }
-});
-
-window.addEventListener("DOMContentLoaded", function () {
   if (!localStorage.getItem("epoch")) {
     localStorage.setItem("epoch", new Date().getFullYear());
   }
@@ -86,19 +80,9 @@ function parse() {
   let text = output.innerHTML;
   let showAlert = false;
   toReplace.forEach((n, i) => {
-    if (!isElectron() && !isPwa() && i > 2) {
-      showAlert = true;
-      return;
-    }
     text = text.replace(n, `<span class="inverse">${dateTimeString(n)}</span>`);
   });
   output.innerHTML = text;
-
-  if (showAlert && isBrowserMac()) {
-    alert(
-      "Hey, just a little heads-up!\n\nYour results are limited to 3. Please download the desktop application from the Mac App Store to replace more. You can find the link below.\n\nYour support is greatly appreciated to ensure the continued development of the application!\n\nCheers, Klaus."
-    );
-  }
 }
 
 function dateTimeString(n) {
@@ -122,19 +106,4 @@ function welcome() {
   input.value = welcomeTemplate;
 
   this.setTimeout(() => parse(), 500);
-}
-
-function isElectron() {
-  return !!window.electron;
-}
-
-function isBrowserMac() {
-  return window.navigator.platform.includes("Mac");
-}
-
-function isPwa() {
-  return ["fullscreen", "standalone", "minimal-ui"].some(
-    (displayMode) =>
-      window.matchMedia("(display-mode: " + displayMode + ")").matches
-  );
 }

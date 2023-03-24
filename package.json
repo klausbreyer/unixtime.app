@@ -1,7 +1,6 @@
 {
   "name": "unixtime",
-  "version": "4.0.7",
-  "main": "electron/main.js",
+  "version": "5.0.0",
   "targets": {
     "main": false
   },
@@ -9,38 +8,10 @@
   "author": "Klaus Breyer <kb@v01.io>",
   "license": "UNLICENSED",
   "devDependencies": {
-    "@electron-forge/cli": "^6.0.0-beta.65",
-    "@parcel/packager-raw-url": "2.7.0",
-    "@parcel/transformer-sass": "2.7.0",
-    "@parcel/transformer-webmanifest": "2.7.0",
-    "electron": "^20.0.2",
-    "electron-builder": "^23.3.3",
-    "parcel": "^2.7.0",
+    "parcel": "^2.8.3",
     "posthtml-doctype": "^1.1.1",
     "posthtml-include": "^1.7.4"
   },
   "scripts": {},
-  "dependencies": {
-    "electron-squirrel-startup": "^1.0.0"
-  },
-  "config": {},
-  "build": {
-    "appId": "app.unixtime",
-    "mac": {
-      "target": [
-        {
-          "target": "mas",
-          "arch": "universal"
-        }
-      ],
-      "mergeASARs": false,
-      "category": "public.app-category.developer-tools"
-    },
-    "mas": {
-      "type": "distribution",
-      "provisioningProfile": "embedded.provisionprofile",
-      "entitlements": "build/entitlements.mas.plist",
-      "entitlementsInherit": "build/entitlements.mas.inherit.plist"
-    }
-  }
+  "dependencies": {}
 }

@@ -3,7 +3,7 @@
   "version": "5.0.0",
   "repository": "git@github.com:klausbreyer/unixtime.app.git",
   "author": "Klaus Breyer <kb@v01.io>",
-  "license": "UNLICENSED",
+  "license": "MIT",
   "devDependencies": {
     "@parcel/packager-raw-url": "2.8.3",
     "@parcel/transformer-sass": "2.8.3",

@@ -1,10 +1,35 @@
-# unixtime.app - Bulk Timestamp Conversion for API developers
-## An App for unix timestamp conversion when working with API responses.
+# unixtime.app - Bulk Timestamp Conversion for API Developers
 
-A unix epoch timestamp conversion tool to convert and highlight full texts, whole API responses, and lists with timestamps. Everything that looks like a timestamp since a specific year will just be replaced - simple and easy.
+Welcome to `unixtime.app`, a dedicated tool designed to streamline the timestamp conversion process for API developers. This application is an ideal solution for converting and highlighting unix epoch timestamps within full texts, complete API responses, and lists containing timestamps.
 
-Configuration Options are available: Chose between milliseconds and seconds and choose the year for the timestamps.
+## Key Features
 
-This App works for a list of timestamps, complete API responses, and whatever text you provide.
+- **Bulk Conversion**: Effortlessly convert entire texts, API responses, and lists with timestamps.
+- **Automatic Detection**: The app identifies and converts anything that resembles a unix timestamp since a specific year.
+- **Simple Replacement**: Timestamps are replaced directly in the text, offering a seamless conversion experience.
 
-Feedback is welcome..
+## Configuration Options
+
+- **Epoch Format**: Choose between milliseconds and seconds for timestamp representation.
+- **Year Threshold**: Specify the starting year for recognizing timestamps.
+
+## Use Cases
+
+- **API Response Handling**: Perfect for developers working with APIs that return timestamps.
+- **Timestamp Lists**: Convert lists of timestamps with ease.
+- **Text Processing**: Useful for processing any text that includes unix timestamps.
+
+## Getting Started
+
+To contribute to the development of `unixtime.app`, follow these steps:
+
+```bash
+yarn install
+yarn start
+```
+
+Your contributions and feedback are highly appreciated as we continually strive to improve this tool.
+
+---
+
+We hope `unixtime.app` enhances your development workflow and makes handling unix timestamps a breeze!

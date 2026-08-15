@@ -1,25 +1,31 @@
-import "https://cdn.jsdelivr.net/npm/@pwabuilder/pwaupdate";
+if ("serviceWorker" in navigator) {
+  const hadController = Boolean(navigator.serviceWorker.controller);
+  let refreshing = false;
 
-const el = document.createElement("pwa-update");
-document.body.appendChild(el);
+  navigator.serviceWorker.addEventListener("controllerchange", () => {
+    if (!hadController || refreshing) {
+      return;
+    }
 
-// This is the "Offline copy of assets" service worker
+    refreshing = true;
+    window.location.reload();
+  });
 
-const CACHE = "pwabuilder-offline";
+  window.addEventListener("load", async () => {
+    try {
+      const serviceWorkerUrl = `${window.location.origin}/pwabuilder-sw.js`;
+      const registration = await navigator.serviceWorker.register(
+        serviceWorkerUrl,
+        {
+          scope: "/",
+          updateViaCache: "none",
+        }
+      );
 
-importScripts(
-  "https://storage.googleapis.com/workbox-cdn/releases/5.1.2/workbox-sw.js"
-);
-
-self.addEventListener("message", (event) => {
-  if (event.data && event.data.type === "SKIP_WAITING") {
-    self.skipWaiting();
-  }
-});
-
-workbox.routing.registerRoute(
-  new RegExp("/*"),
-  new workbox.strategies.NetworkFirst({
-    cacheName: CACHE,
-  })
-);
+      registration.waiting?.postMessage({ type: "SKIP_WAITING" });
+      await registration.update();
+    } catch (error) {
+      console.error("Service worker registration failed", error);
+    }
+  });
+}

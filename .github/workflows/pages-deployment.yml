@@ -12,13 +12,16 @@ jobs:
     name: Deploy to Cloudflare
     steps:
       - name: Checkout
-        uses: actions/checkout@v3
-      - name: Setup
-        run: |
-          sudo apt-get install nodejs yarn
+        uses: actions/checkout@v4
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+      - name: Install dependencies
+        run: npm ci
       - name: Build
-        run: |
-          yarn && yarn run build
+        run: npm run build
 
       - name: Publish Page
         uses: cloudflare/pages-action@1

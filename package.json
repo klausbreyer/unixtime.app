@@ -15,6 +15,6 @@
   },
   "scripts": {
     "start": "parcel src/index.html",
-    "build": "parcel build src/index.html --public-url / --dist-dir dist && cp src/images/* dist/images/ && cp src/favicon.ico dist/"
+    "build": "parcel build src/index.html --public-url / --dist-dir dist && cp src/images/* dist/images/ && cp src/favicon.ico src/pwabuilder-sw.js dist/"
   }
 }

@@ -6,7 +6,6 @@
         "description": "An App for unix timestamp conversion when working with API responses.",
         "url": "/"
     }' />
-    <link rel="stylesheet" href="./lib/highlight.js-11.5.1/github-dark.min.css">
 </head>
 
 <body>
@@ -14,7 +13,7 @@
         <include src="src/header.html"></include>
         <div id="app">
             <textarea id="input"></textarea>
-            <pre disabled><code id="output"  class="language-json"></code></pre>
+            <pre><code id="output" class="language-json"></code></pre>
         </div>
     </main>
 
@@ -111,12 +110,11 @@
             </select>
         </div>
     </footer>
-    <script src="app.js"></script>
+    <script src="app.js" type="module"></script>
     <script src="pwa.js" type="module"></script>
     <script src="analytics.js" type="module"></script>
 
     <script src="./lib/highlight.js-11.5.1/highlight.min.js"></script>
-    <script>hljs.highlightAll();</script>
 </body>
 
 

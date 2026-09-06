@@ -69,8 +69,8 @@ textarea {
   padding: 0;
   flex: 1;
   /* height: 100%; */
-  color: #c9d1d9;
-  background-color: #0d1117;
+  color: #fff;
+  background-color: #000;
   border-width: 0;
   white-space: pre-wrap;
   font-size: 0.9rem;
@@ -87,10 +87,22 @@ textarea {
   padding: 1em;
 }
 
-.inverse {
-  color: #1d1e1f;
-  background-color: #c9d1d9;
-  font-weight: bold;
+#output {
+  display: block;
+  padding: 1em;
+  overflow-wrap: anywhere;
+
+  .hljs-attr { color: #80bfff; }
+  .hljs-string { color: #a5dc91; }
+  .hljs-number { color: #ffc777; }
+  .hljs-keyword { color: #c5a3ff; }
+  .hljs-punctuation { color: #aaa; }
+
+  .inverse {
+    color: #000;
+    background-color: #fff;
+    font-weight: bold;
+  }
 }
 
 header {

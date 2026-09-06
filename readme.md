@@ -6,6 +6,7 @@ Welcome to `unixtime.app`, a dedicated tool designed to streamline the timestamp
 
 - **Bulk Conversion**: Effortlessly convert entire texts, API responses, and lists with timestamps.
 - **Automatic Detection**: The app identifies and converts anything that resembles a unix timestamp since a specific year.
+- **JSON Highlighting**: Output colors keys, strings, numbers and literals. Converted timestamps stand out in white. Input text and spacing stay unchanged.
 - **Simple Replacement**: Timestamps are replaced directly in the text, offering a seamless conversion experience.
 
 ## Configuration Options
@@ -30,7 +31,7 @@ npm start -- --port 1234
 
 Your contributions and feedback are highly appreciated as we continually strive to improve this tool.
 
-Run `npm test` for the analytics tests. Run `npm run build` to build the static site in `dist/`.
+Run `npm test` for the conversion, highlighting and analytics tests. Run `npm run build` to build the static site in `dist/`.
 
 ## Analytics
 

@@ -1,6 +1,6 @@
 {
   "name": "unixtime",
-  "version": "5.0.0",
+  "version": "5.1.0",
   "repository": "git@github.com:klausbreyer/unixtime.app.git",
   "author": "Klaus Breyer <kb@v01.io>",
   "license": "MIT",
@@ -14,7 +14,11 @@
     "posthtml-include": "^1.7.4"
   },
   "scripts": {
+    "test": "node --test",
     "start": "parcel src/index.html",
     "build": "parcel build src/index.html --public-url / --dist-dir dist && cp src/images/* dist/images/ && cp src/favicon.ico src/pwabuilder-sw.js dist/"
+  },
+  "dependencies": {
+    "posthog-js": "1.427.2"
   }
 }

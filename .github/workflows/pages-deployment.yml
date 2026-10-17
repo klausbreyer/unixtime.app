@@ -1,7 +1,15 @@
+name: Build and deploy
+
 on:
   push:
     branches:
       - main
+  pull_request:
+  workflow_dispatch:
+
+concurrency:
+  group: bunny-${{ github.ref }}
+  cancel-in-progress: false
 
 jobs:
   deploy:
@@ -9,7 +17,7 @@ jobs:
     permissions:
       contents: read
       deployments: write
-    name: Deploy to Cloudflare
+    name: Build and deploy to bunny.net
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -20,14 +28,16 @@ jobs:
           cache: npm
       - name: Install dependencies
         run: npm ci
+      - name: Test
+        run: npm test
       - name: Build
         run: npm run build
 
-      - name: Publish Page
-        uses: cloudflare/pages-action@1
+      - name: Deploy to bunny.net
+        if: github.ref == 'refs/heads/main' && github.event_name != 'pull_request'
+        uses: BunnyWay/actions/deploy-site@931a74b9c45ea9f9f01435fbbf1649830e67d3b3
         with:
-          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
-          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
-          projectName: unixtime-app
+          api_key: ${{ secrets.BUNNYNET_API_KEY }}
+          site: unixtime-app
           directory: dist
-          gitHubToken: ${{ secrets.GITHUB_TOKEN }}
+          cli_version: '0.19.0'

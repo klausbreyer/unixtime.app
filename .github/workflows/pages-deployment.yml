@@ -41,3 +41,9 @@ jobs:
           site: unixtime-app
           directory: dist
           cli_version: '0.19.0'
+
+      - name: Clean up old deployments
+        if: github.ref == 'refs/heads/main' && github.event_name != 'pull_request'
+        env:
+          BUNNYNET_API_KEY: ${{ secrets.BUNNYNET_API_KEY }}
+        run: npx --yes @bunny.net/cli@0.19.0 sites deployments prune unixtime-app --keep 3 --force

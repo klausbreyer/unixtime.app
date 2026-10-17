@@ -41,6 +41,8 @@ The site name is `unixtime-app`. The CDN hostname is `sites-unixtime-app-0gn7zw.
 GitHub Actions runs tests and builds pull requests. Pushes to `main` also deploy to bunny.net.
 Use the **Build and deploy** workflow on `main` for a manual deployment.
 The workflow reads the `BUNNYNET_API_KEY` repository secret. Deployments run one at a time without cancellation.
+After each successful production deployment, the workflow keeps the three newest deployments and deletes older ones.
+Bunny always protects the current and previous deployments, even if they fall outside the newest three.
 
 For a local production deployment, authenticate the Bunny CLI and run:
 

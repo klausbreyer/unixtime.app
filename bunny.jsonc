@@ -1,0 +1,8 @@
+{
+  "sites": {
+    "name": "unixtime-app",
+    "dir": "dist",
+    "build": "npm run build",
+    "spa": false
+  }
+}

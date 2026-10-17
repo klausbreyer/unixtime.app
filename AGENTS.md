@@ -43,7 +43,7 @@ If a rule conflicts with the task, explain the conflict before you make an excep
 ## Protect the working environment
 
 - Never deploy or touch production unless explicitly instructed. A push to
-  `main` triggers the Cloudflare Pages deployment for `unixtime-app`.
+  `main` triggers the bunny.net deployment for `unixtime-app`.
   State exactly what you will touch before work near production or daily-driver channels.
 - Do not take over an existing development server or its port. Start your own
   server on an unused port. Stop only a PID you captured when you started it.
@@ -164,7 +164,8 @@ Before you call a change done, check the relevant paths and report which applied
   Do not hand-edit minified vendor code.
 - `src/images/` and the favicon files hold static assets. `src/docs/` holds example input.
 - `package.json` defines dependencies, the version and build commands.
-- `.github/workflows/pages-deployment.yml` builds and deploys the static site to Cloudflare Pages.
+- `.github/workflows/pages-deployment.yml` tests, builds and deploys the static site to bunny.net.
+- `bunny.jsonc` defines the Bunny site and local deployment command.
 
 ## Taste
 

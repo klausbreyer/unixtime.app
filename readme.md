@@ -33,6 +33,34 @@ Your contributions and feedback are highly appreciated as we continually strive 
 
 Run `npm test` for the conversion, highlighting and analytics tests. Run `npm run build` to build the static site in `dist/`.
 
+## Hosting and deployment
+
+bunny.net hosts the static site in Edge Storage and serves it through Bunny CDN.
+The site name is `unixtime-app`. The CDN hostname is `sites-unixtime-app-0gn7zw.b-cdn.net`.
+
+GitHub Actions runs tests and builds pull requests. Pushes to `main` also deploy to bunny.net.
+Use the **Build and deploy** workflow on `main` for a manual deployment.
+The workflow reads the `BUNNYNET_API_KEY` repository secret. Deployments run one at a time without cancellation.
+
+For a local production deployment, authenticate the Bunny CLI and run:
+
+```bash
+npm ci
+npm test
+bunny sites deploy --build
+```
+
+Every deployment publishes immediately. To restore the previous deployment, run:
+
+```bash
+bunny sites deployments publish --previous --force
+```
+
+Cloudflare remains the DNS and email-routing provider. Both `@` and `www` point to the Bunny CDN hostname with proxying disabled.
+Cloudflare flattens the root CNAME. Bunny manages HTTPS certificates and redirects the root domain to `https://www.unixtime.app`.
+The redirect preserves the path and query string. A Bunny edge rule requires browser revalidation of `/pwabuilder-sw.js`.
+The existing Cloudflare Pages site remains available for rollback. The workflow no longer deploys to it.
+
 ## Analytics
 
 PostHog runs only on `unixtime.app` and `www.unixtime.app`. Local and preview hosts do not send analytics events.

@@ -50,8 +50,11 @@ If a rule conflicts with the task, explain the conflict before you make an excep
   Never use `pkill -f`, `pgrep | kill`, or a name or worktree match to kill processes.
 - Preserve existing changes, local configuration and browser data. Clear only
   the test state your run created. Check cleanup targets before each run.
-- Use an installed CLI first. Ask before installing a CLI or using a browser,
-  including browser automation. Never use the 1Password CLI unless Klaus asks.
+- Use an installed CLI first. Ask before installing a CLI. Never use the
+  1Password CLI unless Klaus asks. Own isolated browsers for tests and previews need no
+  further approval.
+  Ask before using the user's personal browser context or accounts, and use
+  Chrome exclusively for that access.
 - Do not deploy, publish, commit or push just to verify a local change.
 
 ## Hit every surface
@@ -99,7 +102,7 @@ Before you call a change done, check the relevant paths and report which applied
   appropriate test setup when behavior needs automated coverage.
 - Test conversion logic independently where practical. Use UI checks for
   behavior that depends on DOM events, highlighting, storage or service workers.
-  Ask before using a browser, as required above.
+  Use isolated test contexts under the browser rules above.
 - Wait for the page and the relevant state before browser interactions.
 - A test that changes storage, caches, service workers or other shared state
   must clean up its own state. Use an isolated browser profile for PWA tests.
@@ -107,7 +110,7 @@ Before you call a change done, check the relevant paths and report which applied
   configuration. Run the focused tests relevant to the change.
 - Investigate CI-only failures for timing, ordering and environment differences.
   A successful rerun does not explain the failure.
-- For UI changes, inspect phone and desktop screenshots after browser approval.
+- For UI changes, inspect phone and desktop screenshots in an isolated browser.
   Report any checks you could not complete.
 
 ## Visual changes
@@ -122,16 +125,16 @@ Before you call a change done, check the relevant paths and report which applied
 
 ## Pull requests
 
-- Never work on `main`. Create branches from `main` in sibling worktrees named
-  `../worktrees/<repo-folder-name>-<slug>`.
+- Never work on `main`. Create branches from `main`.
+  Follow the global worktree location and session rules.
 - Use EnterWorktree or an equivalent session mechanism when available. Otherwise,
   set the worktree as the working directory for every command. Verify new pane directories.
 - Keep at most ten registered worktrees. Never force removal or remove a dirty
   or unintegrated worktree. Ask what to remove if cleanup is not safe.
 - Use `feature/<slug>` for a user-facing capability, changes across several
   modules, or work that needs more than two commits. Use a short name for smaller changes.
-- Write branch names, commits and pull request text in English. Add no agent
-  co-author or generation trailer to commits.
+- Write branch names, commits and pull request text in English. Do not add agent
+  co-author trailers. End commits with the global model and harness attribution.
 - Follow the repository's title conventions. Current commit subjects use plain language.
 - For a release, update the version in `package.json` and its lockfile entry
   together. Base it on the latest `main`. Use patch for repairs, minor for new
@@ -139,8 +142,7 @@ Before you call a change done, check the relevant paths and report which applied
 - Before opening a pull request, pull the latest `main` and rebase the branch onto it.
 - Open a normal pull request, never a draft. Start with the problem, then explain
   the solution and relevant verification. End with the model and harness used.
-- Keep the conversation's requirements in one pull request. Avoid unrelated changes.
-- Include before and after images for UI changes when browser use is approved.
+- Include before and after images for UI changes from the isolated test browser.
 - Review the diff before opening the pull request. Verify findings against the
   source. Turn real findings into fixes and focused tests. Do not commit temporary probes.
 - When monitoring a pull request, poll checks and comments newer than the last

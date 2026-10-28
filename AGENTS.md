@@ -142,7 +142,6 @@ Before you call a change done, check the relevant paths and report which applied
 - Before opening a pull request, pull the latest `main` and rebase the branch onto it.
 - Open a normal pull request, never a draft. Start with the problem, then explain
   the solution and relevant verification. End with the model and harness used.
-- Include before and after images for UI changes from the isolated test browser.
 - Review the diff before opening the pull request. Verify findings against the
   source. Turn real findings into fixes and focused tests. Do not commit temporary probes.
 - When monitoring a pull request, poll checks and comments newer than the last
